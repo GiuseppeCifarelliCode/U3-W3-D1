@@ -24,7 +24,7 @@ export class MainComponent {
 
   addToCart(product:Profile){
     if(this.cart.includes(product)) {
-      this.addButton = "Remove From Cart"
+      this.cart = this.cart.filter(prod => prod !== product)
     } else {
       this.cart.push(product)
     console.log(this.cart);
