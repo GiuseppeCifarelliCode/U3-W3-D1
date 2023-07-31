@@ -18,7 +18,8 @@ export class MainComponent {
   ngOnInit(){
     this.productSvc.getAllProducts()
     .subscribe(res => {this.allProducts = res.products
-      console.log(this.allProducts);
+      console.log(res);
+
     })
   }
 
@@ -27,7 +28,6 @@ export class MainComponent {
       this.cart = this.cart.filter(prod => prod !== product)
     } else {
       this.cart.push(product)
-    console.log(this.cart);
     this.addButton = "Remove From Cart"
     }
   }
