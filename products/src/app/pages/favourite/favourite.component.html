@@ -1,1 +1,18 @@
-<p>favourite works!</p>
+<div class="row row-cols-2">
+  <div class="col-8">
+    <h2 class="text-center">SHOP</h2>
+<div class="row row-cols-2">
+<div *ngFor="let product of favourites" class="card">
+  <img src="{{product.thumbnail}}" class="card-img-top" alt="{{product.title}}">
+  <div class="card-body d-flex flex-column justify-content-between">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">{{product.price | currency }}</p>
+    <p class="card-text">Rating {{product.rating}}</p>
+    <div class="d-flex justify-content-evenly">
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

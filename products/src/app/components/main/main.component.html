@@ -11,7 +11,7 @@
     <p class="card-text">Rating {{product.rating}}</p>
     <div class="d-flex justify-content-evenly">
     <a *ngIf="!cart.includes(product)" class="btn btn-warning" (click)="addToCart(product)">Add To Cart</a>
-    <a class="btn btn-success">Add to Favourites</a>
+    <a *ngIf="!favourites.includes(product)" class="btn btn-success" (click)="addToFavourites(product)">Add To Favourites</a>
   </div>
   </div>
 </div>
@@ -27,6 +27,7 @@
       <p class="card-text">{{product.category}}</p>
       <div class="d-flex justify-content-evenly">
       <a class="btn btn-danger" (click)="addToCart(product)">{{addButton}}</a>
+      <a class="btn btn-primary" (click)="addToFavourites(product)">{{favouriteButton}}</a>
     </div>
     </div>
   </div>

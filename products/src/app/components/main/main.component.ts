@@ -11,7 +11,9 @@ export class MainComponent {
 
   allProducts!:Profile[]
   cart:Profile[] = []
+  favourites:Profile[] = []
   addButton:string = "Add To Cart"
+  favouriteButton:string = "Add To Favourites"
 
   constructor(private productSvc:ProductsService){}
 
@@ -29,6 +31,18 @@ export class MainComponent {
     } else {
       this.cart.push(product)
     this.addButton = "Remove From Cart"
+    }
+  }
+
+  addToFavourites(product:Profile){
+    if(this.productSvc.favourites.includes(product)){
+      this.productSvc.favourites = this.productSvc.favourites.filter(prod => prod != product)
+      this.favourites = this.productSvc.favourites
+      this.favouriteButton = "Add To Favourites"
+    } else {
+      this.productSvc.favourites.push(product)
+      this.favourites = this.productSvc.favourites
+      this.favouriteButton = "Remove From Favourites"
     }
   }
 
